@@ -1,4 +1,7 @@
-# DSC680
+---
+title: "My Data Science portfolio"
+output: github_document
+---
 
 Below my portfolion as part data science study
 
