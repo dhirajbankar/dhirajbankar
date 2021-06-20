@@ -1,46 +1,30 @@
-## Introduction
-The rising cost of healthcare in the United States has the potential to stall the economy as well as threaten national security (due to need to balance the budget by making cuts elsewhere).  “Rising health-care costs stall Americans’ dreams of buying homes, building families and saving for retirement.”  (Leonhardt, 2019).  This project will look at demographic and clinical variables commonly collected on hospital admissions and determine their effectiveness in predicting hospital readmissions. 
-Background
-Inadequate social resources and suboptimal care transitions, especially in the form of poor or misunderstood discharge instructions, have been implicated for years as possible causes of readmission to the hospital within 30 days.  Readmissions to the hospital also cause capacity challenges that can force medical centers to expand the number of beds (at great cost to the facility) (Hospital, n.d.). 
-Problem Statement
-The need for repeated episodes of hospital care disrupts the patient's life, costs the healthcare industry billions of dollars each year, places demand on hospital bed capacity, and threatens the viability of hospitals with high readmission rates in the form of Medicare linking payment to the quality of hospital care.
-Through analysis of the features associated with hospital readmissions, our goal is to determine which factors correlate strongly with hospital readmissions and create a logistic regression model which can accurately predict whether a patient will be readmitted based on those features.
-Scope
-This project will review hospitalizations and readmissions within the United States only.  For the purposes of this project, a readmission will be defined as an unplanned admission to an acute care facility within 30 days of a prior admission.
-Preliminary Requirements
-A hospital readmission dataset that includes sufficient variables or features is needed to proceed.  Presence of both demographic and clinical variables is preferred, and a standardized process for hospital collecting and reporting of the data needs to be in place.  We will assume that the dataset has been collected in the most methodical and comprehensive manner as possible because a missing entry in either the index hospitalization information, which may come from another data source, or the readmission itself would cause a true readmission to not show up in our data set.
-Technical Approach
-Data sources or plan for data
-The diabetes dataset from the UCI Machine Learning Databases repository will be used. This dataset is comprised of 10 years of care at 130 US hospitals and integrated delivery networks between 1999 and 2008 (Beata, 2014). Over 50 features are present representing patient and hospital outcomes including, but not limited to, age, gender, race, admission type, discharge type, time in hospital, and whether the patient was readmitted or not. Records are indexed by unique encounter id and patients are indexed by a unique patient id. Encounters that are present in the dataset satisfied several criteria. First, the encounter had to be a hospital admission. Second, the encounter needed to have diabetes included in the diagnosis. Third, the length of stay had to be between one and 14 days. Finally, lab tests and medications had to have been given during the encounter. In all, over 100,000 records are included in the dataset. The target variable, which tracks whether the patient was readmitted, is a categorical variable including the values of no, greater than 30 days, or less than 30 days. Considering the last two variables as yes would make the target variable binary.
-Analysis
-Working through the dataset we will look for possible patterns for those patients that were re-admitted within the 30-day timeframe. We intend to look at age, gender, race, diagnosis type, and all the different types of medication to check for any possible relationships. We will need to put together tests that will look at each value and help us determine whether there is a relationship at a sample level, and if that passes, we can move forward to working with the larger data. 
-Requirement Development 
-The primary requirements for development of our classification model that predicts readmission is a dataset containing our target variable and possible predictor variables. From this we will obtain the features we believe will best train our model and predict our target variable. The variables in the original dataset will need to be evaluated for outliers, missing data, and correlation. Outliers will need to be handled as to not affect our model in unexpected ways. Missing data will need to be examined to see if there is too much missing data in a variable to have it be useful in predicting the target variable. Correlation between the variables and the target variable will be used to determine the best candidates for model features. Finally, candidate features will need to be cleaned in a way that makes them usable as inputs to the applicable model we will be fitting.
-Model Deployment, Testing, and Evaluation
-Since this is classification problem, model selection will be based on such. First, the data will be randomly split into three sets: training, testing, and validation. The training set will be used to train the models, the testing data set will be used to test the performance of the models, and the validation data set will be used to do a final test on the models after tuning model hyperparameters. Models applicable to classification problems that will be explored are K-nearest neighbors, logistic regression, Naïve Bayes, Decision tree, and Random forest. 
-Evaluation of the models will be completed by calculating key performance indicators such as accuracy, precision, recall, and f1 score from a confusion matrix. Since failing to predict a hospital readmission, or a type 2 error, is much worse for the hospital, insurance company, and patient than predicting a hospital readmission when there wouldn’t have been one, we will be focused on tuning our model to reduce type 2 errors specifically. This means we will be focusing on obtaining a model with high recall. Furthermore, since the prevalence of hospital readmission is much lower than not being readmitted in our dataset, we won’t have as much of an issue where our model could always predict one outcome and have positive results. If our model always predicted the most common outcome, not being readmitted, our accuracy would be high, but our focus of type 2 errors would also be high, and our recall would be 0.
-Once our preliminary models have been evaluated, we will begin tuning our model hyperparameters in applicable models. For example, in our decision tree models, we can tune the hyper parameters to specify how deep we want to go in our tree. Then, for K-nearest neighbors, we can adjust the number of nearest neighbors to use to calculate probability for a given record’s result. We can continue to tune these parameters for each model until we have optimal results. Finally, once the models are tuned to the best of our ability, we can test generalization of the models with the validation dataset. This step will be critical to ensure our model is not overfit to the test set.
-Expected Results
-Hospital readmissions within 30 days occur 11.16% of the time in the dataset we have obtained. That means, a model that simply predicts the most common outcome, that the patient will not be readmitted within 30 days, would be 89% accurate. However, that would give us 0% recall which would not improve upon the business problem. On the other hand, if we were to always mark a record that the patient would be readmitted, we would have 100% recall, but only 11.16% accuracy, which also wouldn’t be optimal or useful since the hospital cannot keep patients indefinitely. Finally, if we were to randomly select a patient to be readmitted, we would catch half of the patients that were to be readmitted. In other words, our model would have 50% recall. This model would also have 50% accuracy. Therefore, we would want results that had at least 50% recall while improving on the accuracy of 50%. Otherwise, it would be no better than simply picking a result at random.
-Execution and Management of Project
-Project Plan
-Currently, we are in the late second, early third week of the term. We have found our main dataset and will start working with it by loading it into Python and then working to clean it up by looking for outliers, duplicates, missing information, and performing simple visualizations to identify potential patterns. These initial steps of cleaning the data may be able to split up between the three group members using a primary key in the dataset, encounter_id, which is a unique identifier for each record. While one person is examining one group of variables, another person can be working on a separate group. If any records are deleted in one of the group members datasets, as a means to handle outliers for example, we would be able to keep the datasets in sync by bringing the datasets back together and merging on the common primary key.
-Once the datasets are merged, decisions on the feature variables to be used in the modeling step can be made by examining correlations between the potential feature variables and the target variable. When the features are selected, we can create a new feature dataset that can be split up between train, test, and validation. These three data sets can then be copied so each of the three team members can work on model training and tuning separately. Finally, the results of all the models on the validation dataset, which was not used to tune the model, can be combined and compared. It is from this comparison that we can choose the optimal model for the business case.
-Communication will be completed in the team Slack group chat. Word documents will be worked on collaboratively in a shared drive. R and Python code files and notebooks will be worked on separately and transferred by either email, Slack, or Blackboard. If needed, we will explore using a Github repository for the sharing and merging of code. Each week we will discuss the tasks for upcoming Milestones and divide up the work appropriately through our discussions on Slack.
-Project Risk
-One of the biggest risks with this project is that we either find no variable combination meets our threshold or too many variable combinations exceed it. The threshold can be adjusted lower if the data does not indicate a clear combination, but if too many meet, we may have to raise it or re-check the data.
-A second potential risk is that the social determinants of health may not be the same between two people who look the same on paper.  For example, a black man living in an urban setting and a black man living in a rural setting might look the same on paper, but the differentiating factors between the two, or the social determinants of health, are actually income and educational level, not race.  So, their risk for readmission would not necessarily be the same. Therefore, if race is used as a feature variable, it may just be a proxy variable for the true predictors of our target variable. In other words, if we are using proxy variables, we risk our models being less than optimal.
- 
-References
-Beata Strack, Jonathan P. DeShazo, Chris Gennings, Juan L. Olmo, Sebastian Ventura, 
-Krzysztof J. Cios, and John N. Clore, “Impact of HbA1c Measurement on Hospital 
-Readmission Rates: Analysis of 70,000 Clinical Database Patient Records,” BioMed Research International, vol. 2014, Article ID 781670, 11 pages, 2014.
-Hospital Readmissions Reduction Program (HRRP). (n.d.). Retrieved September 11, 2020, from
-https://www.cms.gov/Medicare/Medicare-Fee-for-Service-
-Payment/AcuteInpatientPPS/Readmissions-Reduction-Program
-Leonhardt, M. (2019, November 04). Rising health-care costs stall Americans' dreams of buying
-homes, building families and saving for retirement. Retrieved from 
-https://www.cnbc.com/2019/11/04/health-care-costs-are-preventing-many-americans-
-from-hitting-life-milestones.html
+## Project Name: Hospital Readmitance predictive model
+Hospitals have a challenge.  Their challenge is about patients, resources, and ultimately better control of their costs.  ![image](https://user-images.githubusercontent.com/19917405/122685833-83888900-d1d3-11eb-8c11-1ddebd565de6.png)
 
-![image](https://user-images.githubusercontent.com/19917405/122685739-e3326480-d1d2-11eb-8b21-abaaf9c0a32b.png)
+
+## Short description: 
+Having better understanding and control of when a patient may need readmittance within a 30 day cycle can help mitigate these challenges.  
+When a patient needs to be readmitted it puts added stress on the overall infrastructure from people, processes and systems and this ultimately increases the institutions costs.
+![image](https://user-images.githubusercontent.com/19917405/122685860-aca91980-d1d3-11eb-95ae-4ad73cc62c70.png)
+
+Today we plan to outline machine learning models that can assist these institutions with a better way to predict those individuals more likely to require readmittance.  
+![image](https://user-images.githubusercontent.com/19917405/122685862-b03ca080-d1d3-11eb-86ab-5aa44a3b1a94.png)
+
+
+## General Info
+Healthcare Spending is significant in the United States![image](https://user-images.githubusercontent.com/19917405/122685885-de21e500-d1d3-11eb-9e41-4e7afae9f23f.png)
+![image](https://user-images.githubusercontent.com/19917405/122685875-d06c5f80-d1d3-11eb-9f81-5ffd24f1a1b2.png)
+
+![image](https://user-images.githubusercontent.com/19917405/122685911-ff82d100-d1d3-11eb-8280-5c3d7fed00cf.png)
+
+![image](https://user-images.githubusercontent.com/19917405/122685916-0a3d6600-d1d4-11eb-849d-f8a0339336f8.png)
+
+![image](https://user-images.githubusercontent.com/19917405/122685921-188b8200-d1d4-11eb-9b9c-941bd60de8ec.png)
+
+
+## Conclusion / Results
+Diabetes readmissions is a multi-billion-dollar problem
+Preventing readmission provides significant cost savings 
+Logistic Regression prove the most accurate with UCI data set
+![image](https://user-images.githubusercontent.com/19917405/122685904-ef6af180-d1d3-11eb-9bf2-972cd3fe3c45.png)
+
