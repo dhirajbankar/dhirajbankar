@@ -1,8 +1,9 @@
-## I am Dhiraj Bankar, presenting portfolio for Master of Data Science 
+## Dhiraj Bankar, presenting portfolio for my Data Science Master's. 
 
-You can use the [editor on GitHub](https://github.com/dhirajbankar/dhirajbankar/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Checkout my portfol [On GitHub](https://github.com/dhirajbankar/dhirajbankar)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Portfolio is in progress!!!
+
 
 ### Markdown
 
