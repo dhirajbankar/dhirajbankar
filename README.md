@@ -1,9 +1,9 @@
 My Data Science portfolio
 ================
 
-## GitHub Documents
+## [My GitHub] https://github.com/dhirajbankar/dhirajbankar
 
-Below my portfolion as part data science study
+Below my portfolion as part data science study 
 
 - Asteroid Impacts- Asteroid Impact probability and classification
 - [Hospital Readmission](https://github.com/dhirajbankar/dhirajbankar/tree/InitialRelease/Hospital%20Readmission) 
