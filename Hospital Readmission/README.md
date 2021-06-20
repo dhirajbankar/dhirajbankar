@@ -9,7 +9,7 @@ When a patient needs to be readmitted it puts added stress on the overall infra
 Today we plan to outline machine learning models that can assist these institutions with a better way to predict those individuals more likely to require readmittance.  
 
 
-## General Info
+## General Information: 
 Healthcare Spending is significant in the United States
 
 ![image](https://user-images.githubusercontent.com/19917405/122685875-d06c5f80-d1d3-11eb-9f81-5ffd24f1a1b2.png)
