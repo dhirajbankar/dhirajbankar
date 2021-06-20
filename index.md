@@ -1,4 +1,4 @@
-## Dhiraj Bankar, presenting portfolio for my Data Science Master's. 
+## Presenting portfolio for my Data Science Master's. 
 
 Checkout my portfol [On GitHub](https://github.com/dhirajbankar/dhirajbankar)
 
