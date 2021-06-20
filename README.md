@@ -12,7 +12,7 @@ Below my portfolion as part data science study
 -  Covid 19 Vaccination Visualization
 -  Heart Disease Binary Classifier using R
 -  Titanic case study
--  Customer churned dataset analysis
+-  [Customer churned dataset analysis] https://github.com/dhirajbankar/dhirajbankar/tree/InitialRelease/Bank%20Customer%20churned%20dataset
 -  Hospital readmission for patient with data
 -  California Housing Prices analysis
 
