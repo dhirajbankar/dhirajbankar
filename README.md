@@ -1,7 +1,7 @@
 My Data Science portfolio
 ================
 
-## [My GitHub] https://github.com/dhirajbankar/dhirajbankar
+## [My GitHub](https://github.com/dhirajbankar/dhirajbankar)
 
 Below my portfolion as part data science study 
 
