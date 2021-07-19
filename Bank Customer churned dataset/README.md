@@ -27,6 +27,9 @@ Observations
 •	We can say that if education level is improved, using the credit card is decreasing.
 •	Generally people use blue card, it's must be correlated with income.
 2) Count plot for all Numerical Features
+![image](https://user-images.githubusercontent.com/19917405/126158429-3c2854ca-ed3f-4475-8b2a-bb6f7d43060a.png)
+![image](https://user-images.githubusercontent.com/19917405/126158460-5de80ed2-80f5-4a9c-ac30-f0e3f34768e0.png)
+![image](https://user-images.githubusercontent.com/19917405/126158477-d7a1bc96-5a45-4ecb-977c-c22391e01673.png)
 
  
  
@@ -49,10 +52,19 @@ Numerical Features
  - Avg_Utilization_Ratio: Average Card Utilization Ratio
  
 3) Histogram for all numeric values
+![image](https://user-images.githubusercontent.com/19917405/126158489-687cfac0-9cd8-48b1-b49c-26e387aa0b04.png)
+
+4) Feature selection
+
+![image](https://user-images.githubusercontent.com/19917405/126158538-006c07fb-f67a-4290-a2d2-8743e2f87163.png)
+![image](https://user-images.githubusercontent.com/19917405/126158552-639d4f70-a945-4e1d-8261-c6b1ab14e095.png)
 
 
 
 ## Conclusion / Results
+![image](https://user-images.githubusercontent.com/19917405/126158593-f60cb0d7-1882-4b7f-92ec-3da966df90a4.png)
+![image](https://user-images.githubusercontent.com/19917405/126158627-4a93a1b4-8cce-41f4-b870-3aeea20dc1fc.png)
+
 The LogisticRegression model predicted the 114 existing customer as attrited customers and 143 attrited customers as existing customer
 The RandomForestClassifier model predicted the 24 existing customer as attrited customers and 215 attrited customers as existing customer
 The GaussianNB model predicted the 93 existing customer as attrited customers and 224 attrited customers as existing customer
