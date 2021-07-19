@@ -8,12 +8,14 @@ Finding the hidden information and create a machine learning model is the goal o
 
 ## General Information: 
 Categorical Features
-•	Attrition_Flag (1: Existing Customer, 0: Attrited Customer): The Customer leave or not
-•	Gender (1: Male, 0: Female)
-•	Education_Level (Graduate , High School, Unknown, Uneducated, College, Post-Graduate, Doctorate)
-•	Marital_Status (Married, Single, Unknown, Divorced)
-•	Income_Category (Less than 40K, 40K - 60K, 80K - 120K, 60K - 80K, Unknown, 120K +) in dollar
-•	Card_Category (Blue, Silver, Gold, Platinum)
+ -	Attrition_Flag (1: Existing Customer, 0: Attrited Customer): The Customer leave or not
+ -	Gender (1: Male, 0: Female)
+ -	Education_Level (Graduate , High School, Unknown, Uneducated, College, Post-Graduate, Doctorate)
+ -	Marital_Status (Married, Single, Unknown, Divorced)
+ -	Income_Category (Less than 40K, 40K - 60K, 80K - 120K, 60K - 80K, Unknown, 120K +) in dollar
+ -	Card_Category (Blue, Silver, Gold, Platinum)
+
+
 1) Count plot for all Categorial Features
  
 
