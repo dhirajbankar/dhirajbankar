@@ -11,7 +11,7 @@ Below my portfolion as part data science study
 -  Covid 19 Data Visualization
 -  Covid 19 Vaccination Visualization
 -  [Heart Disease Binary Classifier using R](https://github.com/dhirajbankar/dhirajbankar/tree/InitialRelease/Using%20R-Heart%20Disease%20Binary%20Classifire)
--  Titanic case study
+-  [Insurance Charges Prediction](https://github.com/dhirajbankar/dhirajbankar/tree/InitialRelease/InsuranceChargesPrediction)
 -  [Customer churned dataset analysis](https://github.com/dhirajbankar/dhirajbankar/tree/InitialRelease/Bank%20Customer%20churned%20dataset)
 -  [Hospital readmission for patient with data](https://github.com/dhirajbankar/dhirajbankar/tree/InitialRelease/Hospital%20Readmission)
 -  California Housing Prices analysis
