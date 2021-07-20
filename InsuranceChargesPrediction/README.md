@@ -9,7 +9,7 @@ Finally, I am a health care domain person and this dataset will give me an oppor
 
 
 ## Short description: 
-I choose to go with the insurance dataset. Given my old healthcare domain background, I want to explore a predictive model-based dataset and the current dataset provided me the necessary scope required for the project.![image](https://user-images.githubusercontent.com/19917405/126319164-17defc09-a2de-475a-9743-cf20ef2a5db6.png)
+I choose to go with the insurance dataset. Given my old healthcare domain background, I want to explore a predictive model-based dataset and the current dataset provided me the necessary scope required for the project.
 
 ## Conclusion / Results
 •	Insurance dataset was successfully analyzed with a goal to predict the insurance charges 
@@ -18,7 +18,6 @@ I choose to go with the insurance dataset. Given my old healthcare domain backgr
 •	The accuracy of the models between three models were very comparable. Within the three models, the polynomial regression has a slightly better accuracy
 •	Overall, a good predictive model was built with an accuracy of about 85% that is able to predict the insurance charges of the customers.
 •	The accuracy would have been much better if the dataset were to have more of instances.
-![image](https://user-images.githubusercontent.com/19917405/126319282-3c2a03a9-7787-434b-ae0d-051c9302293c.png)
 
  
 ## About dataset:
