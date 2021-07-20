@@ -1,0 +1,199 @@
+---
+title: "Heart Disease UCI"
+author: "Dhiraj Bankar"
+date: '2020-Nov-14'
+output:
+  html_document: default
+  word_document: default
+  pdf_document: default
+bibliography: bibliography.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = '//Users/dhirajbankar/R_Laguage/dsc520/assignments/finalProject/')
+```
+
+``` {r include=FALSE , echo=FALSE}
+library(readxl)
+library(boot)
+library(car)
+library(mlogit)
+library(foreign)
+library(caTools)
+library(ggplot2)
+library(class)
+library(Hmisc)
+library(Rcmdr)
+theme_set(theme_minimal())
+```
+
+
+**Heart Disease UCI Dataset analysis**
+
+``` {r include=FALSE , echo=FALSE}
+heartData <- read.csv("heart.csv" )
+heartDF <- data.frame(heartData)
+
+```
+
+#### A. Short summary of data
+```{r}
+str(heartData)
+summary(heartData)
+```
+
+We have 303 observation with 14 variables:
+
+* age: age
+* sex: sex
+* cp: chest pain type (4 values)
+* trestbps: resting blood pressure
+* chol: serum cholesterol in mg/dl
+* fbs: fasting blood sugar > 120 mg/dl
+* restecg: resting electrocardiograph results (values 0,1,2)
+* thalach: maximum heart rate achieved
+* exang: exercise induced angina
+* oldpeak: ST depression induced by exercise relative to rest
+* slope: the slope of the peak exercise ST segment
+* ca: number of major vessels (0-3) colored by flourosopy
+* thal: 3 = normal; 6 = fixed defect; 7 = reversable defect
+* target: Target Groups 
+
+#### B. Find the correleation between all veriables 
+
+``` {r include=TRUE , echo=FALSE}
+cor(heartDF)
+heartAsMatrix <- as.matrix(heartData[,c("age" ,"trestbps" )])
+rcorr(heartAsMatrix)
+cor.test(heartDF$age , heartDF$trestbps)
+```
+
+From correlation result below are my observations on heart disease data
+* The trestbps has 27% affecting to the heart.
+* cp  has 27% affecting to the heart.
+* Cholesterol has 21% affecting to the heart.
+* oldpeakhas 21% affecting to the heart.
+* fbs has 12% affecting to the heart.
+* exang has 9% affecting to the heart.
+* thal has 6% affecting to the heart.
+* All other variables has a -ve correlation values(Means they are not impacting or not related to heart disease). We are going to ignore it for further analysis
+* For Further analysis lets use only age, trestbps , chol, fbs, exang, oldpeak, ca, thal for main analysis
+
+``` {r include=TRUE , echo=FALSE}
+heart_mode_1 <- lm(trestbps ~ chol, data=heartDF)
+summary(heart_mode_1)
+par(mfrow=c(2,2))
+plot(heart_mode_1)
+```
+
+``` {r include=TRUE , echo=FALSE}
+heart_mode_2 <- lm(trestbps ~ chol+ oldpeak + exang + fbs + ca, data=heartDF)
+summary(heart_mode_2)
+par(mfrow=c(2,2))
+plot(heart_mode_2)
+```
+
+``` {r include=FALSE , echo=FALSE}
+usingDF1 <- data.frame(heartDF['trestbps'],heartDF['chol'],heartDF['oldpeak'],heartDF['exang'],heartDF['fbs'],heartDF['ca'])
+usingDF1$residuals <- resid(heart_mode_2)
+usingDF1$standerdized.residuals <- rstandard(heart_mode_2)
+usingDF1$studentized.residuals <- rstudent(heart_mode_2)
+usingDF1$cooks.distance <- cooks.distance(heart_mode_2)
+usingDF1$dfbeta <- dfbeta(heart_mode_2)
+usingDF1$dffits <- dffits(heart_mode_2)
+usingDF1$leverage <- hatvalues(heart_mode_2)
+usingDF1$covariance.ratio <- covratio(heart_mode_2)
+usingDF1$large.residual <- usingDF1$studentized.residuals > 2 | usingDF1$studentized.residuals < -2
+usingDF1$fitted <- heart_mode_2$fitted.values
+
+```
+
+#### C. What is most common age when heart disease gets started?
+``` {r include=TRUE , echo=FALSE}
+ggplot(data = heart_mode_1, aes(x = chol )) + geom_histogram(binwidth=10) + labs(x="Age")
+```
+
+* From the above histogram I would say heart disease are getting started from thirties of the age
+
+#### D. How much is the effect of cholesterol on heart?
+From the correlation found that the Cholesterol has 21% affecting to the heart. Initially before starting the analysis I thought that the Cholesterol is the most important factor which cause the heart disease. But blood pressure and stress has 27% of effect on heart disease. 
+
+
+``` {r include=TRUE , echo=FALSE}
+ggplot(data = heartDF, aes(y = chol, x = trestbps))+
+  geom_line()+ geom_smooth(method = "lm" , colour = "Blue" )
+
+scatterplot(chol ~ trestbps , data=heartDF,
+            xlab="Blood Pressur", ylab="Cholesterol  Level",
+            main="Enhanced Scatter Plot")
+
+```
+
+* The major factor of heart disease is blood pressure and Cholesterol. If you observe above plot, the increase in Cholesterol increases the blood pressure level. 
+
+#### E. Who is most affected by heart disease (Male or Female)? 
+
+``` {r include=TRUE , echo=FALSE}
+set.seed(42)
+p1 <- hist(heartDF$sex) 
+scatterplot(sex ~ trestbps , data=heartDF,
+            xlab="Blood Pressur", ylab="Sex",
+            main="Enhanced Scatter Plot")
+
+```
+
+* Mail has more heart disease that women. 
+
+#### F. Is fasting blood sugar has a relation with heart disease? 
+``` {r include=TRUE , echo=FALSE}
+ggplot(data = heartDF, aes(y = trestbps, x = fbs)) + geom_point()+ geom_line(color='red',data = heartDF, aes(y=trestbps, x=fbs))
+```
+
+* With fasting the blood pressure increases so the patient with heart disease should not do long fasting. 
+
+#### G. How much help or improvement we can achieve with the help of exercise and diet?
+* I couldn't find the exact answer of this question. 
+
+#### H. Will create a multi linear model find the appropriate results. 
+
+``` {r include=TRUE , echo=FALSE}
+
+histogram <- ggplot(usingDF1 , aes (studentized.residuals)) + geom_histogram(aes(y = ..density..), colour = "black" , fill = "white" ) + labs( x= "Studentized Residual", y = "Density") 
+histogram + stat_function(fun = dnorm, args = list(mean = mean(usingDF1$studentized.residuals, na.rm = TRUE), sd = sd(usingDF1$studentized.residuals , na.rm = TRUE)), colour = "red", size = 1 ) 
+
+```
+
+``` {r include=TRUE , echo=FALSE}
+qplot( sample = usingDF1$studentized.residuals , stat = "qq") + labs( x= "Theoretical Values", y = "Observed Values")
+```
+
+``` {r include=TRUE , echo=FALSE}
+
+ggplot(usingDF1 , aes (fitted , studentized.residuals)) + geom_point() + geom_smooth(method = "lm" , colour = "Blue" )  + labs( x= "Fitted Values", y = "Studentized Residual") 
+
+```
+``` {r include=TRUE , echo=FALSE}
+hist(usingDF1$studentized.residuals)
+```
+
+
+``` {r include=TRUE , echo=FALSE}
+hist(rstudent(heart_mode_2))
+```
+
+
+* Overall regression model is unbiased. We could summarize saying that the model appears, in most senses, to be both accurate for the sample and generalizable to the population.
+
+#### I. How much is confidence level of the model?
+
+``` {r include=TRUE , echo=FALSE}
+confint(heart_mode_2)
+```
+
+* What I observed from the outcome of confident interval. A good model will have a small confidence interval, indicating that the value of b is of the b-values tells us about the direction of the relationship between the predictors and outcome. If you observe outcome of my model is very small, means this model is good. 
+
+## Add Citations
+*	Discovering Statistics Using R[@field2012discovering]
+
+# References
