@@ -14,22 +14,22 @@ Finding the hidden information and create wonderful visualization. As part this 
  
 ## Overall design choice:
 I used Power Bi as visualization tool. Now I am really a fan of Power Bi. I used the COVID-19 worldwide dataset. Lets go through each visualization and understand it.
-[1] Stacked area chart
+1. [1] Stacked area chart
 Data source used for this visualization is case rate of 14 days by continent (Data-on-14-day-notification-rate-of-new-COVID-19-cases-and-deaths dataset) [1].
 Color pallets used-
 Green – Total cases by continent.
-[2] Pie chart
+2. [2] Pie chart
 Data source used for this visualization is Population by continent (Data-on-14-day-notification-rate-of-new-COVID-19-cases-and-deaths dataset) [1]. This graph represents population by continent.
-Color pallets used-
+## Color pallets used-
 Yellow – Population in Asia
 Purple – Population in Africa
 Red – Population in Europe
 Sky blue – Population in North America
 Orange – Population in South America
 Black – Population in Oceania
-[3] Line chart
+3. [3] Line chart
 Data source used for this visualization is tests done and new cases for European countries (Data-on-testing-for-COVID-19-by-week-and-country) [1]. This graph represents Total cases and total deaths by country. Used filters to clear graphs. Changed the color combinations for uniformity of dashboard.
-Color pallets used-
+## Color pallets used-
 Green – Total tests by country.
 Blue – Total cases by country.
 
