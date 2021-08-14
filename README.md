@@ -13,6 +13,6 @@ Below my portfolion as part data science study
 -  [Insurance Charges Prediction](https://github.com/dhirajbankar/dhirajbankar/tree/InitialRelease/InsuranceChargesPrediction)
 -  [Customer churned dataset analysis](https://github.com/dhirajbankar/dhirajbankar/tree/InitialRelease/Bank%20Customer%20churned%20dataset)
 -  [Hospital readmission for patient with data](https://github.com/dhirajbankar/dhirajbankar/tree/InitialRelease/Hospital%20Readmission)
--  California Housing Prices analysis
--  Walmart sales prediction analysis
+-  [California Housing Prices analysis](https://github.com/dhirajbankar/dhirajbankar/tree/InitialRelease/California%20Housing%20Exploratory%20Data%20Analysis)
+-  [Walmart sales prediction analysis](https://github.com/dhirajbankar/dhirajbankar/tree/InitialRelease/California%20Housing%20Exploratory%20Data%20Analysis)
 
