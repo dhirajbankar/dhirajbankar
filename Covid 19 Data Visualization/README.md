@@ -10,10 +10,6 @@ Finding the hidden information and create wonderful visualization. As part this 
 •	We can say that if education level is improved, using the credit card is decreasing.
 •	Generally people use blue card, it's must be correlated with income.
 2) Count plot for all Numerical Features
-![image](https://user-images.githubusercontent.com/19917405/126158429-3c2854ca-ed3f-4475-8b2a-bb6f7d43060a.png)
-![image](https://user-images.githubusercontent.com/19917405/126158460-5de80ed2-80f5-4a9c-ac30-f0e3f34768e0.png)
-![image](https://user-images.githubusercontent.com/19917405/126158477-d7a1bc96-5a45-4ecb-977c-c22391e01673.png)
-
  
 
 ## About dataset:
