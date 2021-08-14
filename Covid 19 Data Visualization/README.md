@@ -5,12 +5,15 @@
 ## Short description: 
 Finding the hidden information and create wonderful visualization. As part this project I have used power BI tool to create visualization. 
 
+
 ## Observations
 •	We can see that the dataset is not equally distribute according to Attrition_Flag. We have samples which are mostly Existing.
 •	We can say that if education level is improved, using the credit card is decreasing.
 •	Generally people use blue card, it's must be correlated with income.
 2) Count plot for all Numerical Features
  
+![image](https://user-images.githubusercontent.com/19917405/129462600-cdabd687-1b06-481e-8144-bc99360ce308.png)
+
 
 ## About dataset:
 The data has been pulled from Kaggle Link below
