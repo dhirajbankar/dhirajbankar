@@ -1,6 +1,8 @@
 ## Project Name: Covid-19 Vaccination Visualizztion
  As a Covid warrior I would like to really analyze the COVID-19 data visualization.
 
+![image](https://user-images.githubusercontent.com/19917405/129462701-4cc89865-6cab-479e-a8f8-a3f8db99092b.png)
+
 
 ## Short description: 
 Finding the hidden information and create wonderful visualization. As part this project I have used power BI tool to create visualization. 
