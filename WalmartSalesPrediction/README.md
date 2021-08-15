@@ -1,4 +1,4 @@
-## Project Name: Heart Disease Binary Classifier using python
+## Project Name: Walmart Sales prediction
 Historical sales data for 45 Walmart stores located in different regions are available. There
 are certain events and holidays which impact sales on each day. The business is facing a
 challenge due to unforeseen demands and runs out of stock sometimes, due to
