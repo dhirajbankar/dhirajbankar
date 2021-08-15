@@ -1,68 +1,33 @@
-## Project Name: Heart Disease Binary Classifier using python
-A manager at the bank is disturbed with more and more customers leaving their credit card services. I would like to predict for them who is going to get churned so they can proactively go to the customer to provide them better services and turn customers' decisions in the opposite direction.
+## Project Name: Automation using Python
+As part of this project, 
+Merging the Data and Storing in a Database/Visualizing Data¶ Problem Statement : Now that you have cleaned and transformed your 3 datasets, you need to load them into a database. You can choose what kind of database (SQLLite or MySQL, Postgre SQL are all free options). You will want to load each dataset into SQL Lite as an individual table and then you must join the datasets together in Python into 1 dataset.
 
-## Short description: 
-Finding the hidden information and create a machine learning model is the goal of this project. As part of my analysis I took the credit card of a bank, where the a manager at the bank is disturbed with more and more customers leaving their credit card services. They would really appreciate if one could predict for them who is going to get churned so they can proactively go to the customer to provide them better services and turn customers' decisions in the opposite direction. End of this project I will create a model where it can predict the customers who is gonna get churned.
+Once all the data is merged together in your database, create 5 visualizations that demonstrate the data you have cleansed. You should have at least 2 visualizations that have data from more than one source (meaning, if you have 3 tables, you must have visualizations that span across 2 of the tables – you are also welcome to use your consolidated dataset that you created in the previous step, if you do that, you have met this requirement).
+
+For the visualization portion of the project, you are welcome to use a python library like Matplotlib, Seaborn, or an R package ggPlot2, Plotly, or Tableau/PowerBI.
+
+PowerBI is a free tool that could be used – Tableau only has a free web author. If your use Tableau/PowerBI you need to submit a PDF with your assignment vs the Tableau/PowerBI file. /p>
+
+Submit your code for merging and storing in the database, with your code for the visualizations along with a 250-500-word summary of what you learned and had to do to complete the project. You can submit a Jupyter Notebook or a PDF of your code. If you submit a .py file you need to also include a PDF or attachment of your results.
+
+Remember – your GitHub repository can act as a portfolio for potential employers! I would highly suggest using this to submit your work, so you can fill it with good content that demonstrates the projects you are working on!
+
 
 ## General Information: 
-Categorical Features
- - Attrition_Flag (1: Existing Customer, 0: Attrited Customer): The Customer leave or not
- - Gender (1: Male, 0: Female)
- - Education_Level (Graduate , High School, Unknown, Uneducated, College, Post-Graduate, Doctorate)
- - Marital_Status (Married, Single, Unknown, Divorced)
- - Income_Category (Less than 40K, 40K - 60K, 80K - 120K, 60K - 80K, Unknown, 120K +) in dollar
- - Card_Category (Blue, Silver, Gold, Platinum)
-1) Count plot for all Categorial Features
- ![image](https://user-images.githubusercontent.com/19917405/126317285-e54ae0fb-09b1-4691-bc67-0ba652c7837f.png)
-![image](https://user-images.githubusercontent.com/19917405/126317308-54e1356f-90d4-43d3-af7c-610fddaf30f3.png)
-
-Attrid customeds by categorical Feature and plot the count for it.
-![image](https://user-images.githubusercontent.com/19917405/126317340-111fff10-c23c-4201-b4a4-1ff6bddc2636.png)
 
 
  
 
-Observations
- - We can see that the dataset is not equally distribute according to Attrition_Flag. We have samples which are mostly Existing.
- - We can say that if education level is improved, using the credit card is decreasing.
- - Generally people use blue card, it's must be correlated with income.
- 
-2) Count plot for all Numerical Features
-![image](https://user-images.githubusercontent.com/19917405/126317682-9a910bed-743d-4220-8f21-edc484ce520b.png)
+## Summary
+ Everyone in this class is working really hard on final project submission. To make this project successful, we gone through multiple phases and number of exercises. I really enjoyed this subject and all assignments.
 
+Final project took it little long and continues improvements. I have chosen to use three datasets. CSV files from kaggle Load html table data from wiki using BeautifulSoup library OpenWeather API Data
 
-Numerical Features
- - Customer_Age: Customer's Age in Years
- - Dependent_count: Number of dependents
- - Months_on_book: Period of relationship with bank
- - Total_Relationship_Count: Total no. of products held by the customer
- - Months_Inactive_12_mon: No. of months inactive in the last 12 months
- - Contacts_Count_12_mon: No. of Contacts in the last 12 months
- - Credit_Limit: Credit Limit on the Credit Card
- - Total_Revolving_Bal: Total Revolving Balance on the Credit Card
- - Avg_Open_To_Buy: Open to Buy Credit Line (Average of last 12 months)
- - Total_Amt_Chng_Q4_Q1: Change in Transaction Amount (Q4 over Q1)
- - Total_Trans_Amt: Total Transaction Amount (Last 12 months)
- - Total_Trans_Ct: Total Transaction Count (Last 12 months)
- - Total_Ct_Chng_Q4_Q1: Change in Transaction Count (Q4 over Q1)
- - Avg_Utilization_Ratio: Average Card Utilization Ratio
-3) Histogram for all numeric values
-![image](https://user-images.githubusercontent.com/19917405/126317446-c338a74b-6f5e-4f3a-9ddc-d14bef675378.png)
+I have completed all the Milestone 1,2,3 with final submission and it has all the required plot in the assignment. I have re-upload all the milestone assignment as part of final submission.
 
-![image](https://user-images.githubusercontent.com/19917405/126317465-de2373d2-2406-4574-a643-afaf788bd896.png)
+The most challenging part in this course (Final project) is combine all the data in one dataset. It really took me long time. I supposed to submit this assignment by midnight but took extra four hours to make it presentable.
 
-## Conclusion / Results
-![image](https://user-images.githubusercontent.com/19917405/126317567-d230fd58-cd50-460f-83d2-e9071f6013cd.png)
+Stitching of data from multiple sources is easy with SQL light for COVID19 and COVID19_WEB data. To stitch the temperature data with Time series really took a long time instead of using SQL queries approach, I used pandas to manipulate the data to stitch it and save it back to SQL.
 
-![image](https://user-images.githubusercontent.com/19917405/126317591-b0b0f135-2afb-4644-b0eb-4a65ba352278.png)
+Thanks to Catherine for all the hard work of putting sach a wonderful course with all valuable information, all assignments. Thanks to all my colleagues for your reviews and all feedbacks you provided. I really enjoyed this class. Hope we can meet in next classes and get more and more knowledge on data science.
 
-
-The LogisticRegression model predicted the 114 existing customer as attrited customers and 143 attrited customers as existing customer
-The RandomForestClassifier model predicted the 24 existing customer as attrited customers and 215 attrited customers as existing customer
-The GaussianNB model predicted the 93 existing customer as attrited customers and 224 attrited customers as existing customer
-As per accuracy the RandomForestClassifier should perform best but LogisticRegression model is performing better that other models. It could be due to feture selections which I did. 
-
- 
-## About dataset:
-The data has been pulled from Kaggle Link below
-https://www.kaggle.com/sakshigoyal7/credit-card-customers
