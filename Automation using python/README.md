@@ -14,9 +14,19 @@ Remember – your GitHub repository can act as a portfolio for potential employe
 
 
 ## General Information: 
+### Creating Bar Chart for Covid 19 total cases count, Death, new cases by Date
+![image](https://user-images.githubusercontent.com/19917405/129463092-f41fecf0-5860-4b4d-ab55-14500bc111f8.png)
 
+### Covid 19 total cases count by state
+![image](https://user-images.githubusercontent.com/19917405/129463095-e56e949f-914f-4c37-898c-d66c44aecb6e.png)
 
- 
+### line Chart/Plot for temperature change
+![image](https://user-images.githubusercontent.com/19917405/129463099-72bccccb-37f4-485f-b75e-c30916f8bd1b.png)
+
+### lot the COVID 19 cases only for IL 
+
+![image](https://user-images.githubusercontent.com/19917405/129463106-be7aa664-a0b6-488a-b0da-ea77f8822672.png)
+
 
 ## Summary
  Everyone in this class is working really hard on final project submission. To make this project successful, we gone through multiple phases and number of exercises. I really enjoyed this subject and all assignments.
